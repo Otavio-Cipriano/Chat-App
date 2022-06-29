@@ -1,0 +1,7 @@
+body {
+  margin: 0;
+}
+
+.col, .col-md-auto{
+  padding: 0;
+}
