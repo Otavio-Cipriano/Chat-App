@@ -11,6 +11,7 @@ export function useUser() {
 export default function UserProvider({ children }) {
     const [user, setUser] = useState()
     const [room, setRoom] = useState()
+    const [usersAtRoom, setUsersAtRoom] = useState([])
     const { socket } = useSocket()
 
 

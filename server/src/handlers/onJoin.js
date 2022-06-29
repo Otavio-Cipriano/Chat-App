@@ -3,7 +3,7 @@ const onJoin = (socket) => {
         if(userAndRoom.room){
             socket.join(userAndRoom.room)
             console.log(userAndRoom.room)
-            socket.broadcast.to(userAndRoom.room).emit('joinned', 'entro')
+            socket.broadcast.to(userAndRoom.room).emit('joinned', {user: userAndRoom.user, id: socket.id})
         }
     })
 }

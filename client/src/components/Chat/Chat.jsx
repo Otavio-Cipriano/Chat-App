@@ -3,7 +3,7 @@ import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 
 
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 import ChatMessage from './ChatMessage'
 import { useUser } from '../../context/UserProvider'
@@ -19,7 +19,6 @@ export default function Chat() {
     const [currentMessage, setCurrentMessage] = useState('')
     const { user, room } = useUser()
     const { socket } = useSocket()
-
 
 
     useEffect(() => {

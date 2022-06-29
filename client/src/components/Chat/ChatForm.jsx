@@ -32,7 +32,8 @@ export default function ChatForm({ currentMessage, setCurrentMessage, setMessage
                         className="me-auto"
                         placeholder="Send A Message"
                         value={currentMessage}
-                        onChange={(e) => setCurrentMessage(e.target.value)} />
+                        onChange={(e) => setCurrentMessage(e.target.value)} 
+                        onKeyDown={(e) => {if(e.key === 'Enter') sendMessage(e)}}/>
                     <Button className="w-25" variant="primary" onClick={sendMessage}>
                         Chat
                         <IoSend style={{margin: '-3px 0 0 10px'}}/>
