@@ -21,9 +21,9 @@ const onConnection = (socket) => {
     onMessage(socket)
     onLeave(socket)
 
-    socket.on('disconnect', () => {
-        console.log('A user has disconnected')
-    })
+    // socket.on('disconnect', () => {
+    //     console.log('A user has disconnected')
+    // })
 }
 
 io.on('connection', onConnection)

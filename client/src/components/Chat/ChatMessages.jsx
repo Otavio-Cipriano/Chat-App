@@ -11,7 +11,6 @@ export default function ChatMessages({ messages }) {
 
     useEffect(()=>{
         messagesRef.current.scrollIntoView({inline: "end", behavior: "smooth"})
-        console.log('aa')
     },[messages])
 
     return (

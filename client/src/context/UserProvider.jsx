@@ -11,7 +11,7 @@ export function useUser() {
 export default function UserProvider({ children }) {
     const [user, setUser] = useState()
     const [room, setRoom] = useState()
-    const [usersAtRoom, setUsersAtRoom] = useState([])
+    const [whoLeft, setWhoLeft] = useState()
     const { socket } = useSocket()
 
 
@@ -21,11 +21,22 @@ export default function UserProvider({ children }) {
             socket.emit('join', {user, room})
         }
 
+        const handler = (user) =>{
+            setWhoLeft(user)
+        }
+
+        socket.on('left', handler)
+
+        return () => {
+            socket.off('left', handler)
+        }
+
     }, [socket, user, room])
 
     const value = {
         user,
         room,
+        whoLeft,
         setUser,
         setRoom
     }
