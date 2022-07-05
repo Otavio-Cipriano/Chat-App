@@ -9,10 +9,17 @@ export function useUser() {
 
 
 export default function UserProvider({ children }) {
-    const [user, setUser] = useState()
-    const [room, setRoom] = useState()
+    const [user, setUser] = useState('')
+    const [room, setRoom] = useState('')
     const [whoLeft, setWhoLeft] = useState()
     const { socket } = useSocket()
+
+
+    const leaveRoom = () => {
+        setUser('')
+        setRoom('')
+        socket.emit('leave', {user: user, room: room})
+    }
 
 
     useEffect(() => {
@@ -38,7 +45,8 @@ export default function UserProvider({ children }) {
         room,
         whoLeft,
         setUser,
-        setRoom
+        setRoom,
+        leaveRoom
     }
 
     return (
