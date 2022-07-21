@@ -14,7 +14,7 @@ export default function ChatMessages({ messages }) {
     },[messages])
 
     return (
-        <div className="chat__messages h-100 .bg-light.bg-gradient shadow-sm">
+        <div className="chat__messages h-100 bg-gray-900 shadow-sm text-white">
             <div className='h-100' style={{overflow: 'hidden auto', maxHeight: '86vh'}} >
                 {/* <p style={{padding: '1rem 1.5rem'}}>Welcome to {room}, {user}</p> */}
                 <ChatMessage isGeneric={true} genericMsg={`Welcome to ${room}, ${user}`}/>

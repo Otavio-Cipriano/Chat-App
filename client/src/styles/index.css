@@ -1,10 +1,12 @@
 @import url('vendor.css');
 @import url('lobby.css');
+@import url('chat.css');
 
 body {
   margin: 0;
   background-color: var(--bs-gray-dark);
   font-family: 'Roboto', sans-serif;
+  color: white;
 }
 
 .col, .col-md-auto{

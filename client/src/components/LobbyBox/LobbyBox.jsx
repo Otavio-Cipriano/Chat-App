@@ -21,10 +21,10 @@ export default function LobbyBox() {
 
     return (
         <Stack 
-            className="lobby__box rounded-3 justify-content-md-center w-50 mx-auto pe-4 ps-4 pb-4 bg-gray-800 text-white" style={{ alignSelf: 'auto' }}>
-            <h1 className='h2 mb-3 mt-5 text-center'>Lobby</h1>
+            className="lobby__box rounded-3 text-center justify-content-md-center w-50 mx-auto pe-4 ps-4 pb-4 bg-gray-900 text-white" style={{ alignSelf: 'auto' }}>
+            <h1 className='h2 mb-3 mt-5'>Lobby</h1>
             <Form onSubmit={handleSubmit}>
-                <Form.Group className='mb-3'>
+                <Form.Group className='mb-3 text-start'>
                     <Form.Label>Username</Form.Label>
                     <Form.Control
                         value={username}
@@ -33,7 +33,7 @@ export default function LobbyBox() {
                         placeholder="Enter your Username"
                         className="placeholder-white bg-secondary border-secondary text-white" />
                 </Form.Group>
-                <Form.Group className='mb-3'>
+                <Form.Group className='mb-3 text-start'>
                     <Form.Label>Room</Form.Label>
                     <Form.Control
                         value={roomToJoin}
@@ -42,7 +42,7 @@ export default function LobbyBox() {
                         placeholder="Room to Join"
                         className="placeholder-white bg-secondary border-secondary text-white" />
                 </Form.Group>
-                <Button className="me-3" type='submit' variant='primary'>Enter Chat</Button>
+                <Button className="mt-4 pt-2 pb-2 ps-4 pe-4" type='submit' variant='primary'>Enter Chat</Button>
             </Form>
         </Stack >
     )

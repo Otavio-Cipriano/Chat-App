@@ -25,11 +25,11 @@ export default function ChatForm({ currentMessage, setCurrentMessage, setMessage
     }
 
     return (
-        <div className="chat__form">
+        <div className="chat__form p-2 bg-gray-900">
             <Form>
                 <Stack direction='horizontal' gap={2}>
                     <Form.Control
-                        className="me-auto"
+                        className="placeholder-white bg-secondary border-secondary text-white me-auto"
                         placeholder="Send A Message"
                         value={currentMessage}
                         onChange={(e) => setCurrentMessage(e.target.value)} 
