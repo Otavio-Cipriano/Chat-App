@@ -1,6 +1,6 @@
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import Dashboard from './Dashboard'
-import Login from './Login'
+import Lobby from './Lobby'
 import { useUser } from '../context/UserProvider'
 
 export default function Routing() {
@@ -9,7 +9,7 @@ export default function Routing() {
     <BrowserRouter>
         <Routes>
             <Route path='/' element={<ProtectedRoute user={user}><Dashboard/></ProtectedRoute>}/>
-            <Route path='/login' element={<Login/>}/>
+            <Route path='/lobby' element={<Lobby/>}/>
         </Routes>
     </BrowserRouter>
   )
@@ -18,7 +18,7 @@ export default function Routing() {
 
 const ProtectedRoute = ({user, children}) => {
   if(!user){
-    return <Navigate to="/login" replace/>
+    return <Navigate to="/lobby" replace/>
   }
 
   return children

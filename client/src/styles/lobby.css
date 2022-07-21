@@ -1,0 +1,9 @@
+.lobby{
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+
+.lobby .lobby__box{
+    max-width: 500px !important;
+}
