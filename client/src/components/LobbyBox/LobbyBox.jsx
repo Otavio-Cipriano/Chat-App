@@ -21,26 +21,33 @@ export default function LobbyBox() {
     }
 
     const validateForm = () => {
-        if (!username && !roomName) {
+        if ((!username && !roomName) || (username.length < 3 && roomName.length < 3)) {
             setFormError({
                 username: "It\'s need to enter a username",
                 room: "It\'s need to enter a room name"
             })
-
+            setUsername('')
+            setRoomName('')
             return true;
         }
-        else if (!username || username.length < 4) {
+        else if (!username || username.length < 3) {
             setFormError({
                 username: "It\'s need to enter a username longer than 4 characters",
                 room: ""
             })
+            setUsername('')
+            return true;
         }
-        else if (!roomName || roomName.length < 4) {
+        else if (!roomName || roomName.length < 3) {
             setFormError({
                 username: "",
                 room: "It\'s need to enter a room name longer than 4 characters"
             })
+            setRoomName('')
+            return true;
         }
+
+        console.log('aa')
     }
 
     return (
@@ -67,7 +74,7 @@ export default function LobbyBox() {
                         onChange={(e) => setRoomName(e.currentTarget.value)}
                         type='text'
                         placeholder="Room to Join"
-                        className={`placeholder-white bg-secondary border-secondary text-white ${formError['username'].length > 0 ? 'border-danger' : ''}`} />
+                        className={`placeholder-white bg-secondary border-secondary text-white ${formError['room'].length > 0 ? 'border-danger' : ''}`} />
                     {formError['room'].length > 0 ? 
                     <Form.Text className="text-danger">{formError['room']}</Form.Text> : 
                     ''}
